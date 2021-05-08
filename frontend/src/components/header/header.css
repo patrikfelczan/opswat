@@ -1,0 +1,145 @@
+@media screen and (min-width: 760px) {
+  .header {
+    display: flex;
+    height: 15vh;
+    width: auto;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    font-family: 'Varela', sans-serif;
+  }
+.header button {
+  color: #b88d01;
+  background: none;
+  border:none;
+  cursor: pointer;
+  font-size: 3vh;
+}
+.header button:focus {
+  outline: none;
+}
+.header button:hover {
+  color: #dbb022;
+  text-decoration: underline;
+  filter: drop-shadow(0px 1px 3px black);
+}
+.logo {
+  width:fit-content
+}
+  .logoImage {
+    margin-left: 10%;
+    height: 100px;
+    filter: drop-shadow(0px 1px 3px black);
+  }
+  .links {
+    display: flex;
+    margin-right: 10%;
+    justify-content: space-evenly;
+    font-size: 3vh;
+    align-items: center;
+    gap: 25px;
+  }
+  .header a {
+    color: #b88d01;
+    text-decoration: none;
+  }
+  .header a:hover {
+    color: #dbb022;
+    text-decoration: underline;
+    filter: drop-shadow(0px 1px 3px black);
+  }
+  .loginlink {
+    margin-right: 40px;
+  }
+}
+.header .dropdown{
+  padding: 0px 16px;
+}
+
+.header .dropdown a{
+  display: flex;
+}
+.carticonCounter {
+  position: absolute;
+  color: #d0ac35;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 20px;
+  margin-top: 25px;
+  padding: 4px;
+  background-color: #0000009e;
+  border-radius: 20px;
+}
+
+
+@media screen and (max-width: 760px){
+
+  .header {
+    display: flex;
+    height: 15vh;
+    width: auto;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .header button {
+    color: #b88d01;
+    background: none;
+    border:none;
+    cursor: pointer;
+    font-size: 3vh;
+  }
+  .header button:focus {
+  outline: none;
+  }
+  .header button:hover {
+    color: #dbb022;
+    text-decoration: underline;
+    filter: drop-shadow(0px 1px 3px black);
+  }
+  div.logo{
+    max-width:100px;
+  }
+  .logoImage {
+    margin-left: 10%;
+    height: 70%;
+    position:relative;
+    top:13%;
+    filter: drop-shadow(0px 1px 3px black);
+  }
+  .links {
+    display: flex;
+    margin-top:5%;
+    margin-right: 10%;
+    width: 20vh;
+    justify-content: space-evenly;
+    font-size: 3vh;
+    align-items: center;
+  }
+  .header a {
+    color: #b88d01;
+    text-decoration: none;
+  }
+  .header a:hover {
+    color: #dbb022;
+    text-decoration: underline;
+    filter: drop-shadow(0px 1px 3px black);
+  }
+  .loginlink {
+    margin-right: 40px;
+  }
+
+  .carticon {
+    max-height:30px;
+  }
+
+  .userprofileicon {
+    max-height:30px;
+  }
+
+  .logoutlink {
+    max-height:30px;
+  }
+
+  .header .dropdown a{
+    display: flex;
+  }
+}
