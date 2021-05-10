@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import UserInput from '../../components/userinput/userinput';
+import './register.scss'
 
 function RegisterForm() {
   const history = useHistory();
@@ -32,6 +33,7 @@ function RegisterForm() {
         history.push('/login');
       }
       const response = await postUser.json();
+      console.log(response.message)
       await getResponse(response.message);
     } catch (error) {
       console.log(error.message);

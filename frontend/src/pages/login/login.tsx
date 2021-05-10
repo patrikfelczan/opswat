@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import UserInput from '../../components/userinput/userinput';
+import './login.scss';
+
+
+
 
 
 function LoginForm() {
@@ -28,7 +32,7 @@ function LoginForm() {
         );
 
         const response = await loginUser.json();
-        //console.log(response); 
+        console.log(response); 
 
         if (loginUser.status === 201) {
           setToken(response);
@@ -36,7 +40,7 @@ function LoginForm() {
         } else {
           console.log(response)
           setShowMessage(true);
-          setMessage('email or password incorrect');
+          setMessage('Email or password incorrect');
           setEmail('');
           setPassword('');
         }
@@ -96,7 +100,12 @@ function LoginForm() {
 }
 
 function setToken(response: any) {
-  localStorage.setItem('token', response.accessToken.token);
+  localStorage.setItem('token', response.user.token);
+  localStorage.setItem('userid', response.user.id);
+  localStorage.setItem('useremail', response.user.email);
+  localStorage.setItem('userbio', response.user.bio);
+  localStorage.setItem('userimage', response.user.image);
+  localStorage.setItem('username', response.user.username);
 }
 
 export default LoginForm;
