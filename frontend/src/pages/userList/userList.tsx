@@ -32,8 +32,8 @@ const Users =() => {
     }
   }
 
-  const deleteUsers = async (e: any) => {
-    await fetch(`http://localhost/api/users/${e.target.id}`, {
+  const deleteUsers =  (e: any) => {
+    fetch(`http://localhost/api/users/${e.target.id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${token}`,
@@ -46,7 +46,8 @@ const Users =() => {
         }
         throw new Error("Connection failed!");
       })
-      .then((response) => console.log(response.status))
+
+      .then((response) => console.log(response))
       .catch((err) => {
         console.log(err);
       });

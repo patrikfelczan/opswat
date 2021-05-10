@@ -95,10 +95,10 @@ const LoginForm = () => {
 function setToken(response: any) {
   localStorage.setItem("token", response.user.token);
   localStorage.setItem("userid", response.user.id);
-  localStorage.setItem("useremail", response.user.email);
+  /* localStorage.setItem("useremail", response.user.email);
   localStorage.setItem("userbio", response.user.bio);
   localStorage.setItem("userimage", response.user.image);
-  localStorage.setItem("username", response.user.username);
+  localStorage.setItem("username", response.user.username); */
 };
 
 export default LoginForm;
