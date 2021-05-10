@@ -1,9 +1,8 @@
 import react from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { User } from "../../interfaces";
 import "./userList.scss";
-
-function Users() {
+const Users =() => {
   const token = localStorage.getItem("token");
   const [users, setUsers] = useState<User[]>([]);
 
@@ -25,29 +24,33 @@ function Users() {
   };
 
   function write() {
-    fetchUsers();
-    return users;
-  };
+    if (!token) {
+      throw new Error("Authorization failed!");
+    } else {
+      fetchUsers();
+      return users;
+    }
+  }
 
   const deleteUsers = async (e: any) => {
     await fetch(`http://localhost/api/users/${e.target.id}`, {
-      method: 'DELETE',
+      method: "DELETE",
       headers: {
         authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      }
+        "Content-Type": "application/json",
+      },
     })
-      .then(response => {
+      .then((response) => {
         if (response.status === 200) {
           return response;
         }
-        throw new Error('Connection failed!');
+        throw new Error("Connection failed!");
       })
-      .then(response => console.log(response.status))
-      .catch(err => {
+      .then((response) => console.log(response.status))
+      .catch((err) => {
         console.log(err);
       });
-  }
+  };
 
   return (
     <div>
@@ -57,7 +60,11 @@ function Users() {
           <p>
             // {user.username} // {user.email}
           </p>
-          <button onClick={deleteUsers} className="delete-button" id={user.email}>
+          <button
+            onClick={deleteUsers}
+            className="delete-button"
+            id={user.email}
+          >
             Delete
           </button>
         </div>

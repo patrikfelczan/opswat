@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import UserInput from "../../components/userinput/userinput";
-//import './Profile.css';
+import './userprofile.scss';
 
 const ProfileData = () => {
   const token = localStorage.getItem("token");
@@ -74,46 +74,44 @@ const ProfileData = () => {
             whenChange={(e: any) => setEmail(e.target.value)}
           />
         </div>
-        <div className="profile-bio">
+        <div className="profile-username">
           Current bio:
           <UserInput
             title=""
             divClass="useredit-input"
             labelClass="userform-label"
-            inputClass="profile-bio-input"
+            inputClass="profile-email-input"
             id="bio"
             type="bio"
             value={bio}
             whenChange={(e: any) => setBio(e.target.value)}
           />
-      </div>
-
-          <div className="profile-image">
-            Current image:
-            <UserInput
-              title=""
-              divClass="useredit-input"
-              labelClass="userform-label"
-              inputClass="profile-image-input"
-              id="image"
-              type="image"
-              value={image}
-              whenChange={(e: any) => setImage(e.target.value)}
-            />
-                  </div>
-
-          <button id="update-button" type="submit">
-            {" "}
-            Save{" "}
-          </button>
-          {showMessage ? (
-            <div id="profile-form-message">{message}</div>
-          ) : (
-            <div> </div>
-          )}
         </div>
-
-      
+        <div className="profile-username">
+          Current Image:
+          <UserInput
+            title=""
+            divClass="useredit-input"
+            labelClass="userform-label"
+            inputClass="profile-username-input"
+            id="user"
+            type="text"
+            value={image}
+            whenChange={(e: any) => {
+              setImage(e.target.value);
+            }}
+          />
+        </div>
+        <button id="update-button" type="submit">
+          {" "}
+          Save{" "}
+        </button>
+        {showMessage ? (
+          <div id="profile-form-message">{message}</div>
+        ) : (
+          <div> </div>
+        )}
+      </div>
     </form>
   );
 };

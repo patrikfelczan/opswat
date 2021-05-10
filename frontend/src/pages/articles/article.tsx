@@ -1,6 +1,6 @@
 import react from 'react'
 
-function Article(){
+const Article = () => {
 
   const getArticle = (e: any) => {
     const token = localStorage.getItem('token');
